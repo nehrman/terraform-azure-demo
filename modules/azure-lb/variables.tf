@@ -7,46 +7,46 @@ variable "tf_az_env" {
 }
 
 variable "tf_az_rg_name" {
-    description = "Name of Resource group to which data will be collected"
+  description = "Name of Resource group to which data will be collected"
 }
 
 variable "tf_az_location" {
-    description = "Define the location where to deploy LB."
+  description = "Define the location where to deploy LB."
 }
 
 variable "tf_az_lb_type" {
-    type = "string"
-    description = "Define which type of Load Balancer will be provided"
-    default = "public"
+  type        = "string"
+  description = "Define which type of Load Balancer will be provided"
+  default     = "public"
 }
 
 variable "tf_az_pubip_address_alloc" {
-    description = "Define which type of Public IP address Allocation will be used. Valid options are Static, Dynamic."
-    default = "static"
+  description = "Define which type of Public IP address Allocation will be used. Valid options are Static, Dynamic."
+  default     = "static"
 }
 
 variable "tf_az_ft_name" {
-    description = "Define the name of Frontend IP Configuration"
+  description = "Define the name of Frontend IP Configuration"
 }
 
 variable "tf_az_lb_probes_port" {
-    description = ""
+  description = ""
 }
 
 variable "tf_az_lb_nb_probes" {
-    description = ""
+  description = ""
 }
 
 variable "tf_az_lb_rule_proto" {
-    description = ""
+  description = ""
 }
 
 variable "tf_az_lb_rule_ft_port" {
-    description = ""
+  description = ""
 }
 
 variable "tf_az_lb_rule_bck_port" {
-    description = ""
+  description = ""
 }
 
 variable "tf_az_tags" {

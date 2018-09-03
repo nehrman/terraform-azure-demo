@@ -1,18 +1,19 @@
 # Create Network Nic to use with VM
 resource "azurerm_network_interface" "vm" {
-  count                           = "${var.tf_az_nb_instance}"
-  name                            = "${var.tf_az_env}-${var.tf_az_prefix}-nic-${count.index}"
-  location                        = "${var.tf_az_location}"
-  resource_group_name             = "${var.tf_az_rg_name}"
-  network_security_group_id       = "${azurerm_network_security_group.vm.id}"
+  count                                    = "${var.tf_az_nb_instance}"
+  name                                     = "${var.tf_az_env}-${var.tf_az_prefix}-nic-${count.index}"
+  location                                 = "${var.tf_az_location}"
+  resource_group_name                      = "${var.tf_az_rg_name}"
+  network_security_group_id                = "${azurerm_network_security_group.vm.id}"
 
   ip_configuration {
-    name                          = "ipconf${count.index}"
-    subnet_id                     = "${var.tf_az_subnet_id}"
-    private_ip_address_allocation = "dynamic"
+    name                                     = "ipconf${count.index}"
+    subnet_id                                = "${var.tf_az_subnet_id}"
+    private_ip_address_allocation            = "dynamic"
+    load_balancer_backend_address_pools_ids  = "${var.tf_az_lb_bckpool_id}"
   }
 
-  tags                            = "${var.tf_az_tags}"
+  tags                                       = "${var.tf_az_tags}"
 }
 
 # Create Security Group related to VMs
@@ -84,17 +85,32 @@ resource "azurerm_virtual_machine" "vm" {
 
   tags = "${var.tf_az_tags}"
 
- # user_data       = "${data.template_file.user_data.rendered}"
-
   lifecycle {
     create_before_destroy = true
   }
 }
 
-data "template_file" "user_data" {
-  template = "${file("${path.module}/user-data.sh")}"
+resource "azurerm_virtual_machine_extension" "test" {
+  count                = "${var.tf_az_nb_instance}"
+  name                 = "webserver"
+  location             = "${var.tf_az_location}"
+  resource_group_name  = "${var.tf_az_rg_name}"
+  virtual_machine_name = "${var.tf_az_env}-${var.tf_az_prefix}-vm-${count.index}"
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.0"
+  depends_on           = ["azurerm_virtual_machine.vm"]
 
-  vars {
-    server_port = "80"
-  }
+  settings = <<SETTINGS
+    {
+        "fileUris": ["https://raw.githubusercontent.com/nehrman/terraform-azure-demo/master/modules/azure-instance/user-data.sh"]
+    }
+SETTINGS
+
+  protected_settings = <<SETTINGS
+    {
+        "commandToExecute": "sudo sh user-data.sh"
+    }
+SETTINGS
+  tags = "${var.tf_az_tags}"
 }
