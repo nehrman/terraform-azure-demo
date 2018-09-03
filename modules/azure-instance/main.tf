@@ -103,14 +103,10 @@ resource "azurerm_virtual_machine_extension" "test" {
 
   settings = <<SETTINGS
     {
-        "fileUris": ["https://raw.githubusercontent.com/nehrman/terraform-azure-demo/master/modules/azure-instance/user-data.sh"]
-    }
-SETTINGS
-
-  protected_settings = <<SETTINGS
-    {
+        "fileUris": ["https://raw.githubusercontent.com/nehrman/terraform-azure-demo/master/modules/azure-instance/user-data.sh"],
         "commandToExecute": "sudo sh user-data.sh"
     }
 SETTINGS
+
   tags = "${var.tf_az_tags}"
 }
