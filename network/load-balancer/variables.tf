@@ -17,4 +17,7 @@ variable az_lb_rule_proto {}
 variable az_lb_rule_ft_port {}
 
 variable az_lb_rule_bck_port {}
-s
+
+var az_tags {
+  type = "map"
+}
