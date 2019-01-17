@@ -8,7 +8,9 @@ variable az_location {}
 
 variable az_ft_name {}
 
-variable az_lb_probes_protocol {}
+variable az_lb_probes_protocol {
+    default = ""
+}
 
 variable az_lb_probes_path {
     default = ""
