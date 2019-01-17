@@ -9,7 +9,7 @@ variable az_location {}
 variable az_ft_name {}
 
 variable az_lb_probes_protocol {
-    default = ""
+    default = "Tcp"
 }
 
 variable az_lb_probes_path {
