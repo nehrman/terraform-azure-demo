@@ -18,6 +18,6 @@ variable az_lb_rule_ft_port {}
 
 variable az_lb_rule_bck_port {}
 
-var az_tags {
+variable az_tags {
   type = "map"
 }
