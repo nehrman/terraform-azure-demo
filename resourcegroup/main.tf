@@ -23,4 +23,3 @@ output "virtual_network_name" {
 output "subnets_name" {
   value = "${module.rg.virtual_network_subnets}"
 }
-s
