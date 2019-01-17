@@ -9,9 +9,7 @@ module "rg" {
   tf_az_subnet_names         = "${var.az_subnet_names }"
   tf_az_storage_account_name = "${var.az_storage_account_name}"
 
-  tf_az_tags = {
-    environment = "dev"
-  }
+  tf_az_tags = "${var.az_tags}"
 }
 
 output "resource_group_name" {
@@ -25,3 +23,4 @@ output "virtual_network_name" {
 output "subnets_name" {
   value = "${module.rg.virtual_network_subnets}"
 }
+s
