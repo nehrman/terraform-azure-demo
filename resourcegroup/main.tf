@@ -1,6 +1,6 @@
 module "rg" {
   source                     = "app.terraform.io/Hashicorp-neh-Demo/rg/azure"
-  version                    = "0.1"
+  version                    = "0.2"
   tf_az_name                 = "${var.az_name}"
   tf_az_env                  = "${var.az_env}"
   tf_az_location             = "${var.az_location}"
@@ -10,6 +10,10 @@ module "rg" {
   tf_az_storage_account_name = "${var.az_storage_account_name}"
 
   tf_az_tags = "${var.az_tags}"
+}
+
+output "resource_group_id" {
+  value = "${module.rg.resource_group_id}"
 }
 
 output "resource_group_name" {
