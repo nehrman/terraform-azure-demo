@@ -1,8 +1,6 @@
-
-
 module "rg" {
-  source  = "app.terraform.io/Hashicorp-neh-Demo/rg/azure"
-  version = "0.1"
+  source                     = "app.terraform.io/Hashicorp-neh-Demo/rg/azure"
+  version                    = "0.1"
   tf_az_name                 = "test"
   tf_az_env                  = "staging"
   tf_az_location             = "westeurope"
@@ -10,6 +8,7 @@ module "rg" {
   tf_az_subnet_prefixes      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   tf_az_subnet_names         = ["subnet1", "subnet2", "subnet3"]
   tf_az_storage_account_name = "stagingtestsa"
+
   tf_az_tags = {
     environment = "staging"
   }
@@ -31,13 +30,13 @@ module "rg" {
 // }
 
 output "resource_group_name" {
-    value = "${module.rg.resource_group_name}"
+  value = "${module.rg.resource_group_name}"
 }
 
 output "virtual_network_name" {
-    value = "${module.rg.virtual_network_name}"
+  value = "${module.rg.virtual_network_name}"
 }
 
 output "subnets_name" {
-    value = "${module.rg.virtual_network_subnets}"
+  value = "${module.rg.virtual_network_subnets}"
 }
