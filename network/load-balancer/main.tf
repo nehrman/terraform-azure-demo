@@ -2,7 +2,7 @@ data "terraform_remote_state" "rg" {
   backend = "atlas"
 
   config {
-    name = "Hashicorp-neh-Demo/webapp1-resourcegroup-${var.az_env}"
+    name = "Hashicorp-neh-Demo/webapp1-resourcegroup-dev"
   }
 }
 
@@ -20,7 +20,7 @@ module "lb" {
   tf_az_lb_rule_proto      = "${var.az_lb_rule_proto }"
   tf_az_lb_rule_ft_port    = "${var.az_lb_rule_ft_port }"
   tf_az_lb_rule_bck_port   = "${var.az_lb_rule_bck_port}"
-  tf_az_rg_name            = "dev-test-rg"
+  tf_az_rg_name            = "${data.terraform_remote_state.rg.resource_group_name}"
 
   tf_az_tags = "${var.az_tags}"
 }
