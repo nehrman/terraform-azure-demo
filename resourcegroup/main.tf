@@ -5,9 +5,6 @@ module "rg" {
   version = "0.1"
 }
 
-
-
-
 // module "azurerg" {
 //   source                     = "../../modules/azure-rg"
 //   tf_az_name                 = "test"
