@@ -14,7 +14,7 @@ module "lb" {
   tf_az_location           = "${var.az_location}"
   tf_az_ft_name            = "${var.az_ft_name}"
   tf_az_lb_probes_port     = "${var.az_lb_probes_port}"
-  tf_az_lb_probes_protocol = "${var.z_lb_probes_protocol}"
+  tf_az_lb_probes_protocol = "${var.az_lb_probes_protocol}"
   tf_az_lb_probes_path     = "${var.az_lb_probes_path}"
   tf_az_lb_nb_probes       = "${var.az_lb_nb_probes}"
   tf_az_lb_rule_proto      = "${var.az_lb_rule_proto }"
