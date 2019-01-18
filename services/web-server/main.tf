@@ -1,6 +1,6 @@
 module "instance" {
   source              = "app.terraform.io/Hashicorp-neh-Demo/instance/azure"
-  version             = "1.0.1"
+  version             = "1.0.2"
   tf_az_name          = "${var.az_name}"
   tf_az_env           = "${var.az_env}"
   tf_az_location      = "${var.az_location}"
