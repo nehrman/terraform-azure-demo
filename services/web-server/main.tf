@@ -1,6 +1,6 @@
 module "instance" {
   source              = "app.terraform.io/Hashicorp-neh-Demo/instance/azure"
-  version             = "1.0.3"
+  version             = "1.0.4"
   tf_az_name          = "${var.az_name}"
   tf_az_env           = "${var.az_env}"
   tf_az_location      = "${var.az_location}"
@@ -10,7 +10,7 @@ module "instance" {
   tf_az_subnet_id     = "${data.terraform_remote_state.rg.0.subnet_id}"
   tf_az_net_name      = "${data.terraform_remote_state.rg.virtual_network_name}"
   tf_az_rg_name       = "${data.terraform_remote_state.rg.resource_group_name}"
-  tf_az_lb_bckpool_id = "${data.terraform_remote_state.lb.0.load_balancer_backend_pool_id}"
+  tf_az_lb_bckpool_id = "${data.terraform_remote_state.lb.load_balancer_backend_pool_id}"
 
   tf_az_tags = "${var.az_tags}"
 }
