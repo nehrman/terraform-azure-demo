@@ -18,6 +18,6 @@ output "subnets_name" {
   value = "${module.rg.virtual_network_subnets_name}"
 }
 
-utput "subnets_id" {
+output "subnets_id" {
   value = "${module.rg.virtual_network_subnets_id}"
 }
