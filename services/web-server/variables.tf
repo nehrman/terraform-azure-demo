@@ -6,5 +6,5 @@ variable az_prefix {}
 variable az_instance_type {}
 
 variable az_tags {
-  typa = "map"
+  type = "map"
 }
