@@ -1,6 +1,6 @@
 module "lb" {
   source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azure"
-  version                  = "0.6"
+  version                  = "1.0"
   tf_az_name               = "${var.az_name}"
   tf_az_env                = "${var.az_env}"
   tf_az_location           = "${var.az_location}"
@@ -16,5 +16,3 @@ module "lb" {
 
   tf_az_tags = "${var.az_tags}"
 }
-
-
