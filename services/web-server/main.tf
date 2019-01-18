@@ -7,10 +7,10 @@ module "instance" {
   tf_az_nb_instance   = "${var.az_nb_instance}"
   tf_az_prefix        = "${var.az_prefix}"
   tf_az_instance_type = "${var.az_instance_type}"
-  tf_az_subnet_id     = "${data.terraform_remote_state.rg.0.subnet_id}"
-  tf_az_net_name      = "${data.terraform_remote_state.rg.virtual_network_name}"
+  tf_az_subnet_id     = ["${data.terraform_remote_state.rg.0.subnet_id}"]
+  tf_az_net_name      = ["${data.terraform_remote_state.rg.virtual_network_name}"]
   tf_az_rg_name       = "${data.terraform_remote_state.rg.resource_group_name}"
-  tf_az_lb_bckpool_id = "${data.terraform_remote_state.lb.0.load_balancer_backend_pool_id}"
+  tf_az_lb_bckpool_id = ["${data.terraform_remote_state.lb.0.load_balancer_backend_pool_id}"]
 
   tf_az_tags = "${var.az_tags}"
 }
