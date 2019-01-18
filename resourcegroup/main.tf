@@ -12,18 +12,4 @@ module "rg" {
   tf_az_tags = "${var.az_tags}"
 }
 
-output "resource_group_id" {
-  value = "${module.rg.resource_group_id}"
-}
 
-output "resource_group_name" {
-  value = "${module.rg.resource_group_name}"
-}
-
-output "virtual_network_name" {
-  value = "${module.rg.virtual_network_name}"
-}
-
-output "subnets_name" {
-  value = "${module.rg.virtual_network_subnets}"
-}
