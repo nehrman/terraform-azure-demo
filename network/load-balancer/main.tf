@@ -1,11 +1,3 @@
-data "terraform_remote_state" "rg" {
-  backend = "atlas"
-
-  config {
-    name = "Hashicorp-neh-Demo/webapp1-resourcegroup-${var.az_env}"
-  }
-}
-
 module "lb" {
   source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azure"
   version                  = "0.6"
@@ -25,14 +17,4 @@ module "lb" {
   tf_az_tags = "${var.az_tags}"
 }
 
-output "load_balancer_id" {
-  value = "${module.lb.load_balancer_id}"
-}
 
-output "load_balancer_backend_pool_id" {
-  value = "${module.lb.load_balancer_backend_pool_id}"
-}
-
-output "load_balancer_public_ip_address" {
-  value = "${module.lb.load_balancer_public_ip_address}"
-}
