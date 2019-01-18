@@ -12,7 +12,5 @@ module "instance" {
   tf_az_rg_name       = "${data.terraform_remote_state.rg.resource_group_name}"
   tf_az_lb_bckpool_id = "${data.terraform_remote_state.lb.0.load_balancer_backend_pool_id}"
 
-  tf_az_tags = {
-    environment = "dev"
-  }
+  tf_az_tags = "${var_az_tags}"
 }
