@@ -1,11 +1,3 @@
-data "terraform_remote_state" "rg" {
-  backend = "atlas"
-
-  config {
-    name = "Hashicorp-neh-Demo/webapp1-resourcegroup-${var.az_env}"
-  }
-}
-
 module "lb" {
   source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azure"
   version                  = "0.6"
