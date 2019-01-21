@@ -4,7 +4,9 @@ variable az_name {
 
 variable az_env {}
 
-variable az_location {}
+variable az_location {
+    default = "francecentral"
+}
 
 variable az_net_addr_space {}
 
