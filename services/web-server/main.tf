@@ -1,3 +1,5 @@
+# Use module "Instance" with appropriate variables to deploy Azure Virtual Machines
+
 module "instance" {
   source              = "app.terraform.io/Hashicorp-neh-Demo/instance/azure"
   version             = "1.0.10"
@@ -12,5 +14,5 @@ module "instance" {
   tf_az_rg_name       = "${data.terraform_remote_state.rg.resource_group_name}"
   tf_az_lb_bckpool_id = "${data.terraform_remote_state.lb.load_balancer_backend_pool_id}"
 
-  tf_az_tags = "${var.az_tags}"
+  tf_az_tags          = "${var.az_tags}"
 }

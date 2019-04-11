@@ -6,7 +6,10 @@
 .terraform/
 
 # Connection File
-connections.tf
+connection.tf
 
 .DS_store
+
+# tfvars file  
+*.tfvars
 
