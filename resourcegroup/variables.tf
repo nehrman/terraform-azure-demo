@@ -22,4 +22,7 @@ variable az_storage_account_name {}
 
 variable az_tags {
   type = "map"
+  default = {
+    "customer": "toto"
+    }
 }
