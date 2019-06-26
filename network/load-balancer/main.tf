@@ -1,5 +1,3 @@
-# USe a module to create a load balancer on Azure
-
 module "lb" {
   source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azurerm"
   version                  = "1.0"
