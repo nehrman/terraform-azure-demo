@@ -2,9 +2,14 @@ variable az_name {
   description = "Name"
 }
 
-variable az_env {}
+variable az_env {
+  description = "Define the environment where resources will be created"
+}
 
-variable az_location {}
+variable az_location {
+  description = "Define the Azure Region to deploy the resources"
+  default = "francecentral"
+}
 
 variable az_ft_name {}
 
@@ -28,4 +33,7 @@ variable az_lb_rule_bck_port {}
 
 variable az_tags {
   type = "map"
+  default = {
+    "test": "test"
+  }
 }
