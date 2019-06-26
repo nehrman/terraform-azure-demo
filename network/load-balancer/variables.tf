@@ -33,4 +33,7 @@ variable az_lb_rule_bck_port {}
 
 variable az_tags {
   type = "map"
+  default = {
+    "test": "test"
+  }
 }
