@@ -28,7 +28,7 @@ variable az_storage_account_name {
 }
 
 variable az_tags {
-  descriptioon = "Deinfe the tags used for your ressources"
+  description = "Define the tags used for your ressources"
   type = "map"
   default = {
     "customer" = "toto",
