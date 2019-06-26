@@ -1,5 +1,5 @@
 module "lb" {
-  source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azure"
+  source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azurerm"
   version                  = "1.0"
   tf_az_name               = "${var.az_name}"
   tf_az_env                = "${var.az_env}"
