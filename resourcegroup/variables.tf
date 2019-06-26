@@ -33,5 +33,6 @@ variable az_tags {
   default = {
     "customer" = "toto",
     "anothertag" = "anotherone"
+    "anothertwo" = "anothertwo"
     }
 }
