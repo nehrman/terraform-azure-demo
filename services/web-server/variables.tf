@@ -1,6 +1,3 @@
-
-
-
 variable az_name {}
 variable az_env {
   description = "Define the environment where resources will be created"
