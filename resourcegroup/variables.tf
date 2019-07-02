@@ -37,6 +37,5 @@ variable az_tags {
   type = "map"
   default = {
     "customer" = "toto",
-    "anothertag" = "anotherone"
     }
 }
