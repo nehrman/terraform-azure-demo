@@ -1,7 +1,7 @@
 data "terraform_remote_state" "rg" {
   backend = "remote"
 
-  config {
+  config = {
     organization = "Hahsicorp-neh-Demo"
 
     workspaces{
