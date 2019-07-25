@@ -4,7 +4,7 @@ data "terraform_remote_state" "rg" {
   config = {
     organization = "Hahsicorp-neh-Demo"
 
-    workspaces {
+    workspaces = {
       name = "Hashicorp-neh-Demo/arm-resourcegroup-${var.az_env}"
     } 
   }
