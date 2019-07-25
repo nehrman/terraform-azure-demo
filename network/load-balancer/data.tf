@@ -1,7 +1,11 @@
 data "terraform_remote_state" "rg" {
-  backend = "atlas"
+  backend = "remote"
 
   config {
-    name = "Hashicorp-neh-Demo/arm-resourcegroup-${var.az_env}"
+    organization = "Hahsicorp-neh-Demo"
+
+    workspaces{
+      name = "Hashicorp-neh-Demo/arm-resourcegroup-${var.az_env}"
+    } 
   }
 }
