@@ -36,7 +36,7 @@ variable az_tags {
   description = "Define the tags used for your ressources"
   type = "map"
   default = {
-    "customer" = "toto",
+    "customer" = "titi",
     "environment" = "dev"
     }
 }
