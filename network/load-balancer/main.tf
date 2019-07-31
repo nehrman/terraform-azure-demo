@@ -1,6 +1,6 @@
 module "lb" {
   source                   = "app.terraform.io/Hashicorp-neh-Demo/lb/azurerm"
-  version                  = "1.0"
+  version                  = "1.0.8"
   tf_az_name               = "${var.az_name}"
   tf_az_env                = "${var.az_env}"
   tf_az_location           = "${var.az_location}"
@@ -12,7 +12,7 @@ module "lb" {
   tf_az_lb_rule_proto      = "${var.az_lb_rule_proto }"
   tf_az_lb_rule_ft_port    = "${var.az_lb_rule_ft_port }"
   tf_az_lb_rule_bck_port   = "${var.az_lb_rule_bck_port}"
-  tf_az_rg_name            = "${data.terraform_remote_state.rg.resource_group_name}"
+  tf_az_rg_name            = "${data.terraform_remote_state.rg.outputs.resource_group_name}"
 
   tf_az_tags = "${var.az_tags}"
 }

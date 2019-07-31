@@ -1,6 +1,8 @@
+# Use module "ResourceGroup" with appropriate variables to create Azure Resource Group
+
 module "rg" {
   source                     = "app.terraform.io/Hashicorp-neh-Demo/rg/azurerm"
-  version                    = "1.0"
+  version                    = "1.0.1"
   tf_az_name                 = "${var.az_name}"
   tf_az_env                  = "${var.az_env}"
   tf_az_location             = "${var.az_location}"

@@ -1,15 +1,23 @@
 data "terraform_remote_state" "rg" {
-  backend = "atlas"
+  backend = "remote"
 
-  config {
-    name = "Hashicorp-neh-Demo/arm-resourcegroup-${var.az_env}"
+  config = {
+    organization = "Hashicorp-neh-Demo"
+
+    workspaces = {
+      name = "arm-resourcegroup-${var.az_env}"
+    }  
   }
 }
 
 data "terraform_remote_state" "lb" {
-  backend = "atlas"
+  backend = "remote"
 
-  config {
-    name = "Hashicorp-neh-Demo/arm-loadbalancer-${var.az_env}"
+  config = {
+    organization = "Hashicorp-neh-Demo"
+
+    workspaces = {
+      name = "arm-loadbalancer-${var.az_env}"
+    }
   }
 }
