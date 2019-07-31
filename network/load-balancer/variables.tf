@@ -14,11 +14,11 @@ variable az_location {
 variable az_ft_name {}
 
 variable az_lb_probes_protocol {
-  default = "Tcp"
+  default = "Http"
 }
 
 variable az_lb_probes_path {
-  default = ""
+  default = "/"
 }
 
 variable az_lb_probes_port {}
