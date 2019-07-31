@@ -4,7 +4,7 @@ data "terraform_remote_state" "rg" {
   config = {
     organization = "Hashicorp-neh-Demo"
 
-    workspaces {
+    workspaces = {
       name = "arm-resourcegroup-${var.az_env}"
     }  
   }
@@ -16,7 +16,7 @@ data "terraform_remote_state" "lb" {
   config = {
     organization = "Hashicorp-neh-Demo"
 
-    workspaces {
+    workspaces = {
       name = "arm-loadbalancer-${var.az_env}"
     }
   }
